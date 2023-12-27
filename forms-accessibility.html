@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Look</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400;500;700&display=swap" rel="stylesheet">
+    <script src='main.js'></script>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-image: url('./image/look-background.svg');
+            background-size: cover;
+        }
+
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'IBM Plex Sans', sans-serif;
+            padding: 20px 0 0 0;
+        }
+
+        .logo{
+            display: flex;
+            margin: 0 0 10px 0
+        }
+        
+        .forms-container{
+            background-color: #fff;
+            width: 50rem;
+            padding:0 40px ;
+        }
+
+        .forms-inputs-container{
+            display: flex;
+    
+
+        }
+
+        .name-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+
+            
+        }
+        
+       .content-container{
+        margin: 22px 0 0 0;
+       }
+
+       
+
+        .describtion-container{
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 0 30px;
+
+        }
+        
+        .mandatory{
+            color: red
+        }
+
+        textarea{
+            width: 100%; 
+            border-style: none;
+            background-color: #E2F0FE;
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+
+
+        .button-forms-container{
+           margin: 62px 0 20px 0;
+        }
+
+
+
+        .custom-button {
+         display: flex;
+         justify-content: center;
+        padding: 10px;
+         background-color: #1CC833;
+        color: black;
+        border: none;
+        cursor: pointer;
+        text-decoration: none; 
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-weight: 800;
+}
+
+    .custom-button:hover{
+        background-color: #62b470;
+    }
+
+        
+
+       
+         @media only screen and (max-width: 600px) {
+
+        
+            .forms-inputs-container{
+                flex-direction: column;
+            
+            }
+
+            .forms-container {
+                width: 100%; 
+                padding: 20px; 
+            }
+
+            .custom-button {
+                width: auto; 
+            }
+
+            h2, p {
+            text-align: center;
+        }
+
+        .forms-inputs-container {
+            display: flex;
+            flex-direction: column; 
+            margin-bottom: 20px; 
+        }
+
+        .content-container {
+            margin: 10px 0 0 0; 
+            text-align: center; 
+        }
+
+
+        .describtion-container {
+            margin: 10px 0 0 0; 
+        }
+
+        textarea {
+            width: 100%; 
+            margin-top: 5px; 
+        }
+
+        .button-forms-container {
+            margin: 20px 0 10px 0;
+        }
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+   <main class="container">
+    <div class="logo">
+        <img src="./image/look-logo.svg" alt="Logo look">
+    </div>
+    
+    <div class="forms-container">
+       <h2>Adicione acessibilidade</h2>
+       <p>Use esse formulário para adicionar acessibilidade, facilitando a utilização 
+        das ferramentas de leitor de tela.</p>
+
+        <div v-for="item in material?.materials" class="forms-inputs-container">
+            <div class="content-container"><img src='./image/image-teste.png' />
+                <p class="name-item">Nome
+                </p>
+            </div>
+          
+            <div class="describtion-container"> <p>Descreva a imagem ou o conteudo ao o lado <i class="mandatory">*</i> : </p>
+                <textarea  type="text" rows="8" cols="65"  :value="item.description" @input="event => item.description = event.target.value"></textarea></div>
+              
+          </div>
+
+          
+        <div v-for="item in material?.materials" class="forms-inputs-container">
+            <div class="content-container"><img src='./image/image-teste2.png' />
+                <p class="name-item">Nome
+                </p>
+            </div>
+          
+            <div class="describtion-container"> <p>Descreva o PDF ou o conteudo ao o lado <i class="mandatory">*</i> : </p>
+                <textarea  type="text" rows="8" cols="65"  :value="item.description" @input="event => item.description = event.target.value"></textarea></div>
+              
+          </div>
+
+          <div class="button-forms-container">
+
+            <a class="custom-button">Adicionar acessibilidade</a>
+
+
+          </div>
+
+    </div>
+    
+
+   </main>
+    
+</body>
+</html>
